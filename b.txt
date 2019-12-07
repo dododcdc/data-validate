@@ -1,3 +1,14 @@
 hello ni hao ma
 
 ni  hshi shei weile shei 
+
+select 'ods_hrapi_org_list' as tab,count(1) as cnt from ods_hrapi_org_list                                                         union all
+select 'ods_hrapi_pay_suitedata' as tab,count(1) as cnt from ods_hrapi_pay_suitedata                                                    union all
+select 'ods_hrapi_user_simplelist' as tab,count(1) as cnt from ods_hrapi_user_simplelist                                                  union all
+select 'ods_wsh_dprpt_welife_charge' as tab,count(1) as cnt from ods_wsh_dprpt_welife_charge                                                union all
+select 'ods_wsh_dprpt_welife_charge_consume' as tab,count(1) as cnt from ods_wsh_dprpt_welife_charge_consume                                        union all
+select 'ods_wsh_dprpt_welife_consume_user_credit' as tab,count(1) as cnt from ods_wsh_dprpt_welife_consume_user_credit                                   union all
+select 'ods_zpgd_bas_moneyid' as tab,count(1) as cnt from ods_zpgd_bas_moneyid                                                       union all
+select 'ods_zpgd_bas_monthtarget' as tab,count(1) as cnt from ods_zpgd_bas_monthtarget                                                   union all
+select 'ods_zpgd_bas_target' as tab,count(1) as cnt from ods_zpgd_bas_target                                                        union all
+select 'ods_zpgd_corp_info' as tab,count(1) as cnt from ods_zpgd_corp_info

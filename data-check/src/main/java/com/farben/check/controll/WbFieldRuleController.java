@@ -1,4 +1,4 @@
-package com.farben.check.controller;
+package com.farben.check.controll;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.farben.check.common.ResultVo;

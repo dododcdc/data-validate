@@ -32,11 +32,4 @@ public class BaseController {
         return jt;
     }
 
-    /**
-     * 获取当前用户名
-     * @return
-     */
-    public String getUserName() {
-        return "username";
-    }
 }

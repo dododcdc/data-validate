@@ -1,4 +1,4 @@
-package com.farben.check.controll;
+package com.farben.check.controller;
 
 import com.farben.check.common.ResultVo;
 import com.farben.check.container.DataContainer;

@@ -1,4 +1,4 @@
-package com.farben.check.controll;
+package com.farben.check.controller;
 
 import com.alibaba.druid.pool.DruidDataSourceFactory;
 import com.farben.check.entity.WbMetadataSource;

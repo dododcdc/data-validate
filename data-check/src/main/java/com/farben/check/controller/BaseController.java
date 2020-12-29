@@ -31,4 +31,12 @@ public class BaseController {
         JdbcTemplate jt = new JdbcTemplate(DruidDataSourceFactory.createDataSource(map));
         return jt;
     }
+
+    /**
+     * 获取当前用户名
+     * @return
+     */
+    public String getUserName() {
+        return "username";
+    }
 }

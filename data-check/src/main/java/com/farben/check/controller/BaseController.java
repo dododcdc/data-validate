@@ -14,8 +14,13 @@ import java.util.HashMap;
  **/
 public class BaseController {
 
-    // 创建jdbcTemplate
 
+    /**
+     * 创建jdbcTemplate
+     * @param db
+     * @return
+     * @throws Exception
+     */
     public JdbcTemplate getJdbcTemplate(WbMetadataSource db) throws Exception{
         HashMap<String, String> map = new HashMap<>();
         map.put("url",db.getUrl());

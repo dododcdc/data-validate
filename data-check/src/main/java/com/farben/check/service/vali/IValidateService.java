@@ -1,4 +1,4 @@
-package com.farben.check.service.validate;
+package com.farben.check.service.vali;
 
 import com.farben.check.entity.WbFieldRule;
 import com.farben.check.entity.response.CheckResultVo;

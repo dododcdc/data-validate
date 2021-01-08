@@ -4,7 +4,7 @@ import com.farben.check.container.DataContainer;
 import com.farben.check.controller.BaseController;
 import com.farben.check.entity.WbMetadataSource;
 import com.farben.check.service.IWbMetadataSourceService;
-import com.farben.check.service.validate.IValidateService;
+import com.farben.check.service.vali.IValidateService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;

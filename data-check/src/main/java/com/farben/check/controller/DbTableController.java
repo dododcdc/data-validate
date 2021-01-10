@@ -4,7 +4,7 @@ import com.farben.check.common.ResultVo;
 import com.farben.check.container.DataContainer;
 import com.farben.check.entity.PageBean;
 import com.farben.check.entity.WbMetadataSource;
-import com.farben.check.entity.res.PageList;
+import com.farben.check.entity.response.PageList;
 import com.farben.check.service.IWbMetadataSourceService;
 import com.farben.check.service.table.impl.ITableService;
 import org.springframework.beans.factory.annotation.Autowired;

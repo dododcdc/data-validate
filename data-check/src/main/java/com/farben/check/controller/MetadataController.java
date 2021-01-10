@@ -2,7 +2,7 @@ package com.farben.check.controller;
 
 import com.farben.check.common.ResultVo;
 import com.farben.check.container.DataContainer;
-import com.farben.check.entity.res.MetadataVo;
+import com.farben.check.entity.response.MetadataVo;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

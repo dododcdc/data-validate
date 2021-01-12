@@ -1,4 +1,4 @@
-package com.farben.check.mapper;
+package com.farben.check.mapperr;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.farben.check.entity.WbFieldRule;

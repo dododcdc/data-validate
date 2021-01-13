@@ -2,7 +2,7 @@ package com.farben.check.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.farben.check.entity.WbMetadataSource;
-import com.farben.check.mapperr.WbMetadataSourceMapper;
+import com.farben.check.mapper.WbMetadataSourceMapper;
 import com.farben.check.service.IWbMetadataSourceService;
 import org.springframework.stereotype.Service;
 

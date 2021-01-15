@@ -1,4 +1,4 @@
-package com.farben.check.service.vali.impl;
+package com.farben.check.service.validate.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.farben.check.container.DataContainer;
@@ -10,7 +10,7 @@ import com.farben.check.entity.response.ValiTableVo;
 import com.farben.check.service.IWbFieldRuleService;
 import com.farben.check.service.IWbMetadataSourceService;
 import com.farben.check.service.IWbRuleService;
-import com.farben.check.service.vali.IValidateService;
+import com.farben.check.service.validate.IValidateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;

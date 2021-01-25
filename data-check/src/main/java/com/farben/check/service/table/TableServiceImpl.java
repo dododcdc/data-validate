@@ -1,8 +1,8 @@
 package com.farben.check.service.table;
 
 import com.farben.check.container.DataContainer;
-import com.farben.check.entity.WbMetadataSource;
-import com.farben.check.entity.response.PageList;
+import com.farben.check.pojo.WbMetadataSource;
+import com.farben.check.pojo.response.PageList;
 import com.farben.check.service.BaseService;
 import com.farben.check.service.IWbMetadataSourceService;
 import com.farben.check.service.table.impl.ITableService;

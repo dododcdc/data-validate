@@ -1,7 +1,7 @@
 package com.farben.check.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.farben.check.entity.WbFieldRule;
+import com.farben.check.pojo.WbFieldRule;
 
 /**
  * @Classname

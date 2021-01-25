@@ -1,19 +1,15 @@
 package com.farben.check.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.baomidou.mybatisplus.extension.conditions.query.LambdaQueryChainWrapper;
 import com.farben.check.common.ResultVo;
-import com.farben.check.entity.WbFieldRule;
+import com.farben.check.pojo.WbFieldRule;
 import com.farben.check.service.IWbFieldRuleService;
-import org.apache.hadoop.hive.metastore.ObjectStore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
 import java.util.List;
 
 import static com.baomidou.mybatisplus.core.toolkit.Wrappers.query;

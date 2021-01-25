@@ -1,7 +1,7 @@
 package com.farben.check.service;
 
 import com.alibaba.druid.pool.DruidDataSourceFactory;
-import com.farben.check.entity.WbMetadataSource;
+import com.farben.check.pojo.WbMetadataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.util.HashMap;

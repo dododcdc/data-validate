@@ -1,7 +1,7 @@
 package com.farben.check.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.farben.check.entity.WbRule;
+import com.farben.check.pojo.WbRule;
 import com.farben.check.mapper.WbRuleMapper;
 import com.farben.check.service.IWbRuleService;
 import org.springframework.stereotype.Service;

@@ -2,7 +2,7 @@ package com.farben.check.controller;
 
 import com.farben.check.common.ResultVo;
 import com.farben.check.container.DataContainer;
-import com.farben.check.entity.WbMetadataSource;
+import com.farben.check.pojo.WbMetadataSource;
 import com.farben.check.service.IWbMetadataSourceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -11,9 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * @Classname

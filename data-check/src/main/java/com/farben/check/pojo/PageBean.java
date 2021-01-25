@@ -1,4 +1,4 @@
-package com.farben.check.entity;
+package com.farben.check.pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

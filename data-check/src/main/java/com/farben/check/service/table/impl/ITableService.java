@@ -1,6 +1,6 @@
 package com.farben.check.service.table.impl;
 
-import com.farben.check.entity.response.PageList;
+import com.farben.check.pojo.response.PageList;
 
 import java.util.List;
 

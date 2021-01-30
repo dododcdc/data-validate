@@ -1,4 +1,4 @@
-package com.farben.check.pojo;
+package com.farben.check.entity;
 
 /**
  * @Classname

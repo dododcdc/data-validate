@@ -1,7 +1,7 @@
 package com.farben.check.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.farben.check.pojo.WbMetadataSource;
+import com.farben.check.entity.WbMetadataSource;
 
 /**
  * @Classname

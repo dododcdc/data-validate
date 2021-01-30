@@ -1,7 +1,7 @@
 package com.farben.check.service.table;
 
 
-import com.farben.check.pojo.ResSql;
+import com.farben.check.entity.ResSql;
 
 import java.util.List;
 

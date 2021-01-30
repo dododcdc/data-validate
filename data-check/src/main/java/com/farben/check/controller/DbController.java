@@ -2,7 +2,7 @@ package com.farben.check.controller;
 
 import com.farben.check.common.ResultVo;
 import com.farben.check.container.DataContainer;
-import com.farben.check.pojo.WbMetadataSource;
+import com.farben.check.entity.WbMetadataSource;
 import com.farben.check.service.IWbMetadataSourceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;

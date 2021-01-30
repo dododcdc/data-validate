@@ -1,7 +1,7 @@
 package com.farben.check.controller;
 
 import com.farben.check.common.ResultVo;
-import com.farben.check.pojo.WbRule;
+import com.farben.check.entity.WbRule;
 import com.farben.check.service.IWbRuleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

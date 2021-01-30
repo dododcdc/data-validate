@@ -1,4 +1,4 @@
-package com.farben.check.pojo;
+package com.farben.check.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

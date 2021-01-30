@@ -2,7 +2,7 @@ package com.farben.check.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.farben.check.common.ResultVo;
-import com.farben.check.pojo.WbFieldRule;
+import com.farben.check.entity.WbFieldRule;
 import com.farben.check.service.IWbFieldRuleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;

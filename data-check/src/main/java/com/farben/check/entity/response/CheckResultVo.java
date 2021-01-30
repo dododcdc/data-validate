@@ -1,4 +1,4 @@
-package com.farben.check.pojo.response;
+package com.farben.check.entity.response;
 
 import lombok.*;
 

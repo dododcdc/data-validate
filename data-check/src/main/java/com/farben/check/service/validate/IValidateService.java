@@ -1,8 +1,8 @@
 package com.farben.check.service.validate;
 
-import com.farben.check.pojo.WbFieldRule;
-import com.farben.check.pojo.response.CheckResultVo;
-import com.farben.check.pojo.response.ValiTableVo;
+import com.farben.check.entity.WbFieldRule;
+import com.farben.check.entity.response.CheckResultVo;
+import com.farben.check.entity.response.ValiTableVo;
 
 import java.util.LinkedList;
 import java.util.List;

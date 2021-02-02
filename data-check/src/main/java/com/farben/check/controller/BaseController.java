@@ -16,7 +16,7 @@ public class BaseController {
 
 
     /**
-     * 创建jdbcTemplat
+     * 创建jdbcTemplate
      * @param db
      * @return
      * @throws Exception

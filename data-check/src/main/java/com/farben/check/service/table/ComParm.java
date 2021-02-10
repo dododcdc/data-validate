@@ -71,7 +71,7 @@ public class ComParm {
      * @return
      */
     public String compCount(ComParm comParm) {
-        // todo 拼接对比sql
+        // todo 拼接数据量对比sql
 
       return  "";
     }

@@ -1,24 +1,20 @@
 package com.farben.check.service.validate.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.farben.check.common.ResultVo;
 import com.farben.check.container.DataContainer;
 import com.farben.check.entity.WbFieldRule;
 import com.farben.check.entity.WbMetadataSource;
 import com.farben.check.entity.WbRule;
-import com.farben.check.entity.response.CheckResultVo;
-import com.farben.check.entity.response.ValiTableVo;
+import com.farben.check.entity.res.CheckResultVo;
+import com.farben.check.entity.res.ValiTableVo;
 import com.farben.check.service.IWbFieldRuleService;
 import com.farben.check.service.IWbMetadataSourceService;
 import com.farben.check.service.IWbRuleService;
 import com.farben.check.service.validate.IValidateService;
-import org.apache.hadoop.hive.metastore.ObjectStore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 

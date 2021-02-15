@@ -1,4 +1,4 @@
-package com.farben.check.entity.response;
+package com.farben.check.entity.res;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

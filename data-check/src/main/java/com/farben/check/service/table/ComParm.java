@@ -38,6 +38,13 @@ public class ComParm {
      */
     public String compConcat(ComParm comParm) {
         // todo 拼接对比sql
+
+        StringBuilder str = new StringBuilder("SELECT COUNT(*)");
+        String tmp = "";
+        for (int i = 0; i < comParm.fields.size(); i++) {
+            tmp += ",SUM(CASE WHEN X." + this.fields.get(i) + " <> Y." + comParm.fields.get(i) +
+            " THEN 1 ELSE 0 END) AS " + this.fields.get(i) + " FROM " ;
+        }
         return  "";
     }
 

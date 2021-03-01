@@ -15,21 +15,6 @@ import java.util.HashMap;
 public class BaseController {
 
 
-    /**
-     * 创建jdbcTemplate
-     * @param db
-     * @return
-     * @throws Exception
-     */
-    public JdbcTemplate getJdbcTemplate(WbMetadataSource db) throws Exception{
-        HashMap<String, String> map = new HashMap<>();
-        map.put("url",db.getUrl());
-        map.put("username",db.getUsername());
-        map.put("password",db.getPassword());
-        map.put("driverClassName",db.getDriver());
-        map.put("initialSize","2");
-        JdbcTemplate jt = new JdbcTemplate(DruidDataSourceFactory.createDataSource(map));
-        return jt;
-    }
+
 
 }

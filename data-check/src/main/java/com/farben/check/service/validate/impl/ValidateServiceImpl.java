@@ -90,8 +90,7 @@ public class ValidateServiceImpl implements IValidateService {
             LinkedList<CheckResultVo> vos = validateField(wbFieldRule);
             ValiTableVo build = ValiTableVo.builder()
                     .dbId(dbId)
-                    .dbName(dbName)
-                    .tableName(tableName)
+
                     .fieldName(wbFieldRule.getFieldName())
                     .pl(vos).build();
             res.add(build);

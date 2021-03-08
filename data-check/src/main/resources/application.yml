@@ -26,6 +26,6 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/nbcb
+    url: jdbc:mysql://localhost:3306/ncbc
     username: root
-    password: 123
+    password: 1111

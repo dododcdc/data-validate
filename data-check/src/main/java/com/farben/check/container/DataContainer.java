@@ -27,4 +27,14 @@ public class DataContainer {
      */
     public static Map<Integer, JdbcTemplate> JTS = new HashMap<>();
 
+    //初始化
+    static {
+
+        // 从数据库查询所有数据源
+
+        // 将这些数据源生成jdbcTemplate 放入JTS中
+
+
+    }
+
 }

@@ -3,6 +3,7 @@ package com.farben.check.controller;
 import com.farben.check.common.ResultVo;
 import com.farben.check.entity.WbRule;
 import com.farben.check.service.IWbRuleService;
+import org.apache.commons.digester.Rule;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -39,7 +40,12 @@ public class WbRuleController {
      */
     @GetMapping("/getRuleById")
     public ResultVo getRuleById( @PathVariable("id") Integer id) {
-        WbRule rule = iWbRuleService.getById(id);
+        WbRule rule = null;
+        try  {
+            rule = iWbRuleService.getById(id);
+        } catch (Exception e) {
+            ResultVo.fail();
+        }
         return ResultVo.success(rule);
     }
 

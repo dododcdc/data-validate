@@ -21,6 +21,10 @@ public class DataContainer {
      */
     public static Map<Integer, DataSource> map = new HashMap<>();
 
+    /**
+     * 库
+     * jdbcTemplate
+     */
     public static Map<Integer, JdbcTemplate> JTS = new HashMap<>();
 
 }

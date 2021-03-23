@@ -62,8 +62,6 @@ public class ComParm {
             tmp += ",SUM(CASE WHEN X." + this.fields.get(i) + " <> Y." + comParm.fields.get(i) +
             " THEN 1 ELSE 0 END) AS " + this.fields.get(i) + " FROM " ;
         }
-        System.out.println(str.toString());
-        System.out.println(tmp );
         return  "";
     }
 

@@ -20,15 +20,32 @@ public class ComParm {
      */
     private List<String> fields ;
 
+    /**
+     * 业务键
+     */
+    private List<String> pks;
+
+    /**
+     * 跑批日期
+     */
+    private String bizDate;
+
+    /**
+     * 跑批日期字段名
+     */
+    private String bizDateName;
 
     public ComParm() {
 
     }
 
-    public ComParm(String dbName, String tableName, List<String> fields) {
+    public ComParm(String dbName, String tableName, List<String> fields, List<String> pks, String bizDate, String bizDateName) {
         this.dbName = dbName;
         this.tableName = tableName;
         this.fields = fields;
+        this.pks = pks;
+        this.bizDate = bizDate;
+        this.bizDateName = bizDateName;
     }
 
     /**

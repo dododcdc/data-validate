@@ -1,0 +1,42 @@
+package com.farben.check;
+
+import com.farben.check.container.DataContainer;
+import com.farben.check.controller.BaseController;
+import com.farben.check.entity.WbMetadataSource;
+import com.farben.check.entity.response.ValiTableVo;
+import com.farben.check.service.IWbMetadataSourceService;
+import com.farben.check.service.validate.IValidateService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import java.util.List;
+
+@SpringBootApplication
+public class DataCheckApplication implements CommandLineRunner {
+
+    @Autowired
+    private IValidateService iValidateService;
+
+    @Autowired
+    private IWbMetadataSourceService iWbMetadataSourceService;
+
+    public static void main(String[] args) {
+        SpringApplication.run(DataCheckApplication.class, args);
+    }
+
+    @Override
+    public void run(String... args) throws Exception {
+
+        List<WbMetadataSource> list = iWbMetadataSourceService.list();
+        BaseController baseController = new BaseController();
+        for (WbMetadataSource wbMetadataSource : list) {
+            JdbcTemplate jdbcTemplate = baseController.getJdbcTemplate(wbMetadataSource);
+            DataContainer.JTS.put(wbMetadataSource.getId(),jdbcTemplate);
+        }
+//        List<ValiTableVo> car_price = iValidateService.valiTable(2, "addresses");
+//        System.out.println("===========");
+    }
+}

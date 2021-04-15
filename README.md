@@ -11,9 +11,7 @@ springboot mybatis-plus vue element-ui CDH集群
 > 请确保java和nodejs已经安装好并且都已经配置了环境变量
  
 1. 将配置文件(resources/application.yml)中数据库的地址改为你自己的地址
-![image](https://user-images.githubusercontent.com/57853678/114810570-f42fb580-9dde-11eb-8741-ea72acfc756a.png)
-
-
+![image](https://user-images.githubusercontent.com/57853678/114810777-60aab480-9ddf-11eb-86f8-76de1cc9eec0.png)
 
 
 2. 启动后端服务

@@ -2,10 +2,10 @@
 > dododcdc
 
 ### 介绍
-对元数据和数据进行校验，对表数据进行对比
+本项目主要应用与大数据分析的数据验证阶段(也可以适用于传统关系型数据库mysql等)，将表与表的元数据进行对比，表与表之间的数据对比，表结果的技术性校验
 
 ### 软件架构
-springboot mybatis-plus vue element-ui impala
+springboot mybatis-plus vue element-ui CDH集群
 
 ### 部署教程
 > 请确保java和nodejs已经安装好并且都已经配置了环境变量

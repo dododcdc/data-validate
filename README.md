@@ -12,7 +12,7 @@ springboot mybatis-plus vue element-ui impala
       * 将data-check 打成jar包
       * 执行java -jar `jar包路径`
 3. 启动前端服务
-> 请确保nodejs等前端环境都已经准备好
+> 请确保nodejs等前端环境都已经准备好 <br>
       * npm install 
       * npm run dev 
 ### 使用说明

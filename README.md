@@ -9,7 +9,7 @@ springboot mybatis-plus vue element-ui impala
 
 ### 部署教程
 1. 启动后端服务
-  * xx
+      * xx
 3. 启动前端服务
 ### 使用说明
 xxxx

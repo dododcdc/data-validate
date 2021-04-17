@@ -37,6 +37,7 @@ public class ComParm {
      * @return
      */
     public String compConcat(ComParm comParm) {
+        // todo 拼接对比sql
         return  "";
     }
 
@@ -46,6 +47,7 @@ public class ComParm {
      * @return
      */
     public String compCount(ComParm comParm) {
+        // todo 拼接对比sql
       return  "";
     }
 

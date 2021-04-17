@@ -2,7 +2,7 @@
 > dododcdc
 
 ### 介绍
-本项目主要应用与大数据分析的数据验证阶段(也可以适用于传统关系型数据库mysql等)，将表与表的元数据进行对比，表与表之间的数据对比，表结果的技术性校验
+本项目主要应用与大数据分析的数据验证阶段(也可以适用于传统关系型数据库mysql等)，将表与表的元数据进行对比，表与表之间的数据对比，表结果的技术性校验，目前主该工具主要用于对于impala上的表校验
 
 ### 软件架构
 springboot mybatis-plus vue element-ui CDH集群
@@ -21,8 +21,6 @@ springboot mybatis-plus vue element-ui CDH集群
       * 安装依赖  npm install 
       * 启动      npm run dev 
 ### 使用说明
-xxxx
-xxxx
-xxxx
+   使用前先要添加数据源，即对应的jdbc连接，这样我们就可以对这些链接做数据校验了，数据校验主要分为三个方面，针对单个表的基础性技术性校验(null值等)，表与表之间的数据对比，表与表之间的元数据对比，对于单个表的技术性校验目前可以支持客户端配置
 ### 参与贡献
-dododcdc
+dododcdc 

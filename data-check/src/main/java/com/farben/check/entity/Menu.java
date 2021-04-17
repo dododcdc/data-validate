@@ -23,5 +23,4 @@ public class Menu {
     private String title;
     private List<Menu> children;
 
-
 }

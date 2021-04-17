@@ -6,6 +6,7 @@ import com.farben.check.entity.WbMetadataSource;
 import com.farben.check.entity.response.ValiTableVo;
 import com.farben.check.service.IWbMetadataSourceService;
 import com.farben.check.service.validate.IValidateService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -14,6 +15,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.util.List;
 
+@Slf4j
 @SpringBootApplication
 public class DataCheckApplication implements CommandLineRunner {
 
@@ -32,6 +34,8 @@ public class DataCheckApplication implements CommandLineRunner {
 
         List<WbMetadataSource> list = iWbMetadataSourceService.list();
         BaseController baseController = new BaseController();
+
+        log.info("容器启动时有哪些数据源");
         for (WbMetadataSource wbMetadataSource : list) {
             JdbcTemplate jdbcTemplate = baseController.getJdbcTemplate(wbMetadataSource);
             DataContainer.JTS.put(wbMetadataSource.getId(),jdbcTemplate);

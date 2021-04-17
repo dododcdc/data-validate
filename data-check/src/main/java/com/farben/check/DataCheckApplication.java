@@ -3,7 +3,6 @@ package com.farben.check;
 import com.farben.check.container.DataContainer;
 import com.farben.check.controller.BaseController;
 import com.farben.check.entity.WbMetadataSource;
-import com.farben.check.entity.response.ValiTableVo;
 import com.farben.check.service.IWbMetadataSourceService;
 import com.farben.check.service.validate.IValidateService;
 import lombok.extern.slf4j.Slf4j;

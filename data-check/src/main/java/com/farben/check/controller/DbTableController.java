@@ -107,52 +107,5 @@ public class DbTableController extends BaseController {
         return ResultVo.success(count);
     }
 
-    /**
-     * 获取所有库表关系，
-     * 作废
-     * @return
-     */
-//    @GetMapping("/list")
-//    public ResultVo get() throws Exception{
-//        // 获取所有库
-//        List<WbMetadataSource> dbs = iWbMetadataSourceService.list();
-//        List<Menu> ms = new LinkedList<>();
-//
-//        for (WbMetadataSource db : dbs) {
-//            //先去看这个库的jt是否已经创建了
-//            //获取jdbctempte
-//            JdbcTemplate jt = DataContainer.JTS.getOrDefault(db.getId(), null);
-//
-//            // 没有创建，就创建一个该库的jt，并放到全局的map中
-//            if (jt == null) {
-//            // 获取连接池
-//                jt = getJdbcTemplate(db);
-//                DataContainer.JTS.put(db.getId(),jt);
-//            }
-//
-//            //构建sql
-//            String sql = "show tables";
-//            // 查询该库下所有表
-//            List<String> res = jt.query(sql, new RowMapper<String>() {
-//                @Override
-//                public String mapRow(ResultSet rs, int i) throws SQLException {
-//                    return rs.getString(1);
-//                }
-//            });
-//            // 左侧菜单封装
-//            ArrayList<Menu> menus = new ArrayList<>();
-//            for (String re : res) {
-//                Menu build = Menu.builder()
-//                        .path(re+"-"+db.getId())
-//                        .title(re).build();
-//                menus.add(build);
-//            }
-//            Menu menu = Menu.builder()
-//                    .path( db.getDbName() +"-" +  db.getId() )
-//                    .title(db.getDbName())
-//                    .children(menus).build();
-//            ms.add(menu);
-//        }
-//        return ResultVo.success(ms);
-//    }
+
 }

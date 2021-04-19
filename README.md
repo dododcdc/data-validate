@@ -13,11 +13,11 @@ springboot mybatis-plus vue element-ui CDH集群
 1. 将配置文件(resources/application.yml)中数据库的地址改为你自己的地址
 ![image](https://user-images.githubusercontent.com/57853678/114810777-60aab480-9ddf-11eb-86f8-76de1cc9eec0.png)
 
-
-2. 启动后端服务
+2. 在mysql执行初始化data-validate\data-check\src\main\resources\init-sql\init.sql
+3. 启动后端服务
       * 将data-check 打成jar包
       * 执行java -jar `jar包路径`
-3. 启动前端服务
+4. 启动前端服务
       * 安装依赖  npm install 
       * 启动      npm run dev 
 ### 使用说明

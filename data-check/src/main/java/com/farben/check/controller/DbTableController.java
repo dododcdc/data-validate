@@ -100,6 +100,12 @@ public class DbTableController extends BaseController {
         return ResultVo.success(page);
     }
 
+    /**
+     * 查询表总数据量
+     * @param dbId
+     * @param tableName
+     * @return
+     */
     @GetMapping("/count")
     public ResultVo count(Integer dbId, String tableName) {
         JdbcTemplate jdbcTemplate = DataContainer.JTS.get(dbId);

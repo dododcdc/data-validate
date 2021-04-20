@@ -23,6 +23,12 @@ public interface IValidateService {
     public LinkedList<CheckResultVo> validateField(WbFieldRule wbFieldRule) ;
 
 
+    /**
+     * 表级校验(对这个表的所有规则进行校验)
+     * @param dbId
+     * @param tableName
+     * @return
+     */
     public List<ValiTableVo> valiTable(Integer dbId,String tableName) ;
 
 

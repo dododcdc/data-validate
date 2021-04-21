@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -88,6 +90,49 @@ public class DbTableController extends BaseController {
     }
 
     /**
+     * 获取表
+     * @param dbId
+     * @param tableName
+     * @param currentPage
+     * @param currentCount
+     * @return
+     * @throws Exception
+     */
+    @GetMapping("/tableList")
+    public ResultVo tableList(Integer dbId, String tableName, Integer currentPage, Integer currentCount) throws Exception {
+        List<PageList> pageLists ;
+        if (tableName == null || ("").equals(tableName) || ("undefined").equals(tableName)) {
+            pageLists = iTableService.list(dbId);
+        }
+        else {
+            pageLists = iTableService.listLikeTableName(dbId, tableName);
+        }
+
+        // 当前页码如果大于总页数，当前页等于总页数 总页数=总条数/每页多少条+1
+        // 每页显示多少条目前是写死的
+        Integer totalPage = pageLists.size() / 7 + 1 ;
+
+        if (currentPage > totalPage ) {
+            currentPage = totalPage;
+        }
+
+        PageBean<PageList> page = new PageBean<>();
+        page.setCurrentPage(currentPage);
+        page.setCurrentCount(currentCount);
+
+        int stIndex = currentPage * currentCount - currentCount;
+        int edIndex = currentPage * currentCount;
+        if (edIndex > pageLists.size()) {
+            edIndex = pageLists.size();
+        }
+        List<PageList> tables = pageLists.subList(stIndex, edIndex);
+        page.setTotalCount(pageLists.size());
+        page.setData(tables);
+        return ResultVo.success(page);
+
+    }
+
+    /**
      * 查询表总数据量
      *
      * @param dbId
@@ -100,6 +145,5 @@ public class DbTableController extends BaseController {
         Integer count = jdbcTemplate.queryForObject("select count(*) from " + tableName, Integer.class);
         return ResultVo.success(count);
     }
-
 
 }

@@ -246,7 +246,7 @@
           })
         },
         search () {
-          const url = '/db-table/searchTable?dbId='+ this.dbId +"&tableName=" + this.iptTableName
+          const url = '/db-table/tableList?dbId='+ this.dbId +"&tableName=" + this.iptTableName
             + "&currentPage=" + this.page.currentPage
             + "&currentCount=" + this.page.currentCount
           this.$axios.get(url).then(x=>{
@@ -339,7 +339,7 @@
         pageList (dbId,type) {
           if (type === 1) {this.page.currentPage = 1}
           this.dbId = dbId
-          let url = "/db-table/pageList?dbId=" + this.dbId
+          let url = "/db-table/tableList?dbId=" + this.dbId
             + "&currentPage=" + this.page.currentPage
             + "&currentCount=" + this.page.currentCount
           this.$axios.get(url).then(x => {

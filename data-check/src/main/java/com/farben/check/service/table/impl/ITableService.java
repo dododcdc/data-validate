@@ -14,12 +14,29 @@ public interface ITableService {
 
     /**
      * 查询所有表
+     *
      * @param dbId
      * @return
      */
-    public List<PageList>  list(Integer dbId) throws Exception;
+    List<PageList> list(Integer dbId) throws Exception;
 
-    public List<PageList>  listLikeTableName(Integer dbId,String tableName) throws  Exception;
+    /**
+     * 模糊搜索表
+     * @param dbId
+     * @param tableName
+     * @return
+     * @throws Exception
+     */
+    List<PageList> listLikeTableName(Integer dbId, String tableName) throws Exception;
 
+
+    /**
+     * 查询表总记录数
+     * @param dbId
+     * @param tableName
+     * @return
+     * @throws Exception
+     */
+    Integer count(Integer dbId, String tableName) throws Exception;
 
 }

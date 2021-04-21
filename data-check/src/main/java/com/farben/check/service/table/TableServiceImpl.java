@@ -77,5 +77,15 @@ public class TableServiceImpl extends BaseService implements ITableService {
         return pageLists;
     }
 
+    @Override
+    public Integer count(Integer dbId, String tableName) throws Exception {
+        JdbcTemplate jdbcTemplate = get(dbId);
+
+        String sql = "SELECT COUNT(*) FROM " + tableName;
+        Integer count = jdbcTemplate.queryForObject(sql, Integer.class);
+
+        return count;
+    }
+
 
 }

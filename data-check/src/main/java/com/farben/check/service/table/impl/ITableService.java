@@ -19,4 +19,7 @@ public interface ITableService {
      */
     public List<PageList>  list(Integer dbId) throws Exception;
 
+    public List<PageList>  listLikeTableName(Integer dbId,String tableName) throws  Exception;
+
+
 }

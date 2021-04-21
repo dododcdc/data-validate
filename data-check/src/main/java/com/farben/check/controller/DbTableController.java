@@ -18,6 +18,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @Classname
@@ -87,21 +88,29 @@ public class DbTableController extends BaseController {
     @GetMapping("/searchTable")
     public ResultVo searchTable(Integer dbId, String tableName) throws Exception {
         List<PageList> list = iTableService.list(dbId);
+        List<PageList> res = list.stream().filter(x -> x.getTableName().matches(tableName)).collect(Collectors.toList());
         PageList build = PageList.builder().tableName(tableName).build();
         PageBean<PageList> page = new PageBean<>();
-        if (list.contains(build)){
-            list.clear();
-            list.add(build);
-            page.setData(list);
-            page.setCurrentPage(1);
-            page.setCurrentCount(7);
-            page.setTotalCount(1);
-        }
+
+        page.setData(res);
+        page.setCurrentPage(1);
+        page.setCurrentCount(7);
+        page.setTotalCount(1);
+
+//        if (list.contains(build)){
+//            list.clear();
+//            list.add(build);
+//            page.setData(list);
+//            page.setCurrentPage(1);
+//            page.setCurrentCount(7);
+//            page.setTotalCount(1);
+//        }
         return ResultVo.success(page);
     }
 
     /**
      * 查询表总数据量
+     *
      * @param dbId
      * @param tableName
      * @return

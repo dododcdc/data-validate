@@ -247,6 +247,8 @@
         },
         search () {
           const url = '/db-table/searchTable?dbId='+ this.dbId +"&tableName=" + this.iptTableName
+            + "&currentPage=" + this.page.currentPage
+            + "&currentCount=" + this.page.currentCount
           this.$axios.get(url).then(x=>{
             this.page = x.data.data
           })
@@ -346,8 +348,15 @@
         },
         // 页面变化
         pageChange(currentPage) {
-          this.page.currentPage = currentPage
-          this.pageList(this.dbId,0)
+          // 如果tablename不为空就走搜索
+          if(this.iptTableName !== undefined) {
+            this.page.currentPage = currentPage
+            this.search()
+          } else {
+            this.page.currentPage = currentPage
+            this.pageList(this.dbId,0)
+          }
+
         },
         // 刷新
         flush () {

@@ -31,8 +31,6 @@ import java.util.stream.Collectors;
 @RequestMapping("/db-table")
 public class DbTableController extends BaseController {
 
-    @Autowired
-    private IWbMetadataSourceService iWbMetadataSourceService;
 
     @Autowired
     private ITableService iTableService;
@@ -45,27 +43,12 @@ public class DbTableController extends BaseController {
      */
     @GetMapping("/pageList")
     public ResultVo pageList(Integer dbId, Integer currentPage, Integer currentCount) throws Exception {
-        //先从容器获取
-        JdbcTemplate jdbcTemplate = DataContainer.JTS.getOrDefault(dbId, null);
-        //如果没有去数据库查询
-        if (jdbcTemplate == null) {
-            WbMetadataSource db = iWbMetadataSourceService.getById(dbId);
-            jdbcTemplate = getJdbcTemplate(db);
-            //并将新的添加到容器
-            DataContainer.JTS.put(dbId, jdbcTemplate);
-        }
+        List<PageList> res = iTableService.list(dbId);
+
         PageBean<PageList> page = new PageBean<>();
         page.setCurrentPage(currentPage);
         page.setCurrentCount(currentCount);
-        String sql = "show tables";
-        // 查询该库下所有表
-        List<PageList> res = jdbcTemplate.query(sql, new RowMapper<PageList>() {
-            @Override
-            public PageList mapRow(ResultSet rs, int i) throws SQLException {
-                String str = rs.getString(1);
-                return PageList.builder().tableName(str).build();
-            }
-        });
+
         //截取
         int stIndex = currentPage * currentCount - currentCount;
         int edIndex = currentPage * currentCount;
@@ -86,25 +69,21 @@ public class DbTableController extends BaseController {
      * @return
      */
     @GetMapping("/searchTable")
-    public ResultVo searchTable(Integer dbId, String tableName) throws Exception {
-        List<PageList> list = iTableService.list(dbId);
-        List<PageList> res = list.stream().filter(x -> x.getTableName().matches(tableName)).collect(Collectors.toList());
-        PageList build = PageList.builder().tableName(tableName).build();
+    public ResultVo searchTable(Integer dbId, String tableName, Integer currentPage, Integer currentCount) throws Exception {
+        List<PageList> pageLists = iTableService.listLikeTableName(dbId, tableName);
         PageBean<PageList> page = new PageBean<>();
+        page.setCurrentPage(currentPage);
+        page.setCurrentCount(currentCount);
 
-        page.setData(res);
-        page.setCurrentPage(1);
-        page.setCurrentCount(7);
-        page.setTotalCount(1);
+        int stIndex = currentPage * currentCount - currentCount;
+        int edIndex = currentPage * currentCount;
+        if (edIndex > pageLists.size()) {
+            edIndex = pageLists.size();
+        }
+        List<PageList> tables = pageLists.subList(stIndex, edIndex);
+        page.setTotalCount(pageLists.size());
+        page.setData(tables);
 
-//        if (list.contains(build)){
-//            list.clear();
-//            list.add(build);
-//            page.setData(list);
-//            page.setCurrentPage(1);
-//            page.setCurrentCount(7);
-//            page.setTotalCount(1);
-//        }
         return ResultVo.success(page);
     }
 

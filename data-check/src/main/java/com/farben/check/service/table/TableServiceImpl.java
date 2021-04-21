@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -59,14 +60,21 @@ public class TableServiceImpl extends BaseService implements ITableService {
         JdbcTemplate jdbcTemplate = get(dbId);
         WbMetadataSource ds = iWbMetadataSourceService.getById(dbId);
         String sql ;
-        if (ds.getDriver().equals("org.apache.hive.jdbc.HiveDriver")){
-            sql = "SHOW TABLE LIKE '*" + tableName + "*' ";
-        }else {
-            sql = "SHOW TABLE LIKE '%" + tableName + "%' ";
+        if (tableName==null || tableName.isEmpty() || tableName.equals("undefined")) {
+            sql = "SHOW TABLES";
         }
-        List<Map<String, Object>> maps = jdbcTemplate.queryForList(sql);
-        System.out.println("good");
-        return null;
+        else if (ds.getDriver().equals("org.apache.hive.jdbc.HiveDriver")){
+            sql = "SHOW TABLES LIKE '*" + tableName + "*' ";
+        } else {
+            sql = "SHOW TABLES LIKE '%" + tableName + "%' ";
+        }
+        List<String> tables = jdbcTemplate.queryForList(sql,String.class);
+        ArrayList<PageList> pageLists = new ArrayList<>();
+        tables.forEach(x -> {
+            pageLists.add(PageList.builder().tableName(x).build());
+        });
+
+        return pageLists;
     }
 
 

@@ -69,7 +69,7 @@ CREATE TABLE `wb_metadata_source`  (
 -- ----------------------------
 INSERT INTO `wb_metadata_source` VALUES (1, 'jdbc:mysql://localhost:3306/db1', 'root', '1111', 'db1', 0, 'com.mysql.jdbc.Driver');
 INSERT INTO `wb_metadata_source` VALUES (2, 'jdbc:mysql://localhost:3306/sql_jinjiejiaocheng', 'root', '1111', 'sql_jinjiejiaocheng', 0, 'com.mysql.jdbc.Driver');
-INSERT INTO `wb_metadata_source` VALUES (4, 'jdbc:hive2://172.16.20.42:21050/nbcb;auth=noSasl', 'root', '2w3e4r5t', 'nbcb', 1, 'org.apache.hive.jdbc.HiveDriver');
+
 
 -- ----------------------------
 -- Table structure for wb_rule

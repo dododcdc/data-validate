@@ -40,13 +40,15 @@ public class DbTableController extends BaseController {
     @GetMapping("/tableList")
     public ResultVo tableList(Integer dbId, String tableName, Integer currentPage, Integer currentCount) throws Exception {
         List<PageList> pageLists ;
+        // 如果不传表名，就查询这个库下的全部表
         if (tableName == null || ("").equals(tableName) || ("undefined").equals(tableName)) {
             pageLists = iTableService.list(dbId);
         }
+        //传了表名就模糊查询，将匹配的表全部返回
         else {
             pageLists = iTableService.listLikeTableName(dbId, tableName);
         }
-
+        //分页
         // 当前页码如果大于总页数，当前页等于总页数 总页数=总条数/每页多少条+1
         // 每页显示多少条目前是写死的
         Integer totalPage = pageLists.size() / 7 + 1 ;

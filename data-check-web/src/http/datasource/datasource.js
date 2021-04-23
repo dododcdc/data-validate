@@ -1,11 +1,14 @@
 import axios from 'axios'
-
+import { Message } from 'element-ui';
 
 
 export const add = function (data) {
     const url = '/wbMetaDataSource/add'
     axios.post(url,data).then(x=>{
-        alert(x.data.msg)
+      Message({
+          "type":"info",
+          "message":x.data.msg
+        })
     })
 }
 

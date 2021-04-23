@@ -2,6 +2,7 @@
     <div>
 <!--      <el-button @click="toDtList" class="btn btn-success">查看数据源</el-button>-->
         <div style="width:70%;margin:0 auto;" >
+         <div style="margin-top:50px;"></div>
         <el-form :model="datasource" class="formsource" label-width="120px">
             <el-row>
                 <el-col :span="10">
@@ -55,20 +56,12 @@
             </el-row>
 
             <el-row>
-                <el-col :span="3"><h1></h1></el-col>
-                <el-col :span="7">
-                    <el-button style="width:100%" @click="addSource">添 加</el-button>
+              <el-col :span="10">
 
-                </el-col>
-
-            </el-row>
-            <el-row>
-
-                   <el-col :span="3"><h1></h1></el-col>
-                <el-col :span="7">
-<!--                    <el-button style="width:100%" @click="getSource">获 取</el-button>-->
-
-                </el-col>
+              <el-form-item label="">
+                <el-button style="width:100%" @click="addSource">添 加</el-button>
+              </el-form-item>
+              </el-col>
             </el-row>
         </el-form>
         </div>
@@ -76,7 +69,7 @@
 </template>
 
 <script>
-import {add,get} from '@/http/datasource/datasource.js'
+import {add} from '@/http/datasource/datasource.js'
 export default {
     data () {
         return {

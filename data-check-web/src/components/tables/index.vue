@@ -233,7 +233,7 @@
           }
       },
       mounted() {
-        this.getRules()
+        // this.getRules()
       },
       methods: {
         valiTable() {

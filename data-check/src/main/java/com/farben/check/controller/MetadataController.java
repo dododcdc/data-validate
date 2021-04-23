@@ -67,6 +67,8 @@ public class MetadataController {
                     .fieldComment(fileComment).build();
             list.add(mt);
         }
+        //关闭连接
+        conn.close();
 
         return ResultVo.success(list);
     }

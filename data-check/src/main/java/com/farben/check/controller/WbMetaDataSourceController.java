@@ -3,6 +3,7 @@ package com.farben.check.controller;
 import com.farben.check.common.ResultVo;
 import com.farben.check.container.DataContainer;
 import com.farben.check.entity.WbMetadataSource;
+import com.farben.check.service.BaseService;
 import com.farben.check.service.IWbMetadataSourceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -26,6 +27,9 @@ public class WbMetaDataSourceController extends BaseController {
     @Autowired
     private IWbMetadataSourceService iWbMetadataSourceService;
 
+    @Autowired
+    private BaseService baseService;
+
     /**
      * 添加连接
      * @param wbMetadataSource
@@ -35,7 +39,8 @@ public class WbMetaDataSourceController extends BaseController {
     public ResultVo add(@RequestBody WbMetadataSource wbMetadataSource) throws Exception  {
         //将资源存到数据库
         boolean res = iWbMetadataSourceService.save(wbMetadataSource);
-        JdbcTemplate jt = getJdbcTemplate(wbMetadataSource);
+        JdbcTemplate jt = baseService.get(wbMetadataSource.getId());
+//        JdbcTemplate jt = getJdbcTemplate(wbMetadataSource);
         // 将jdbctemplate添加到内存中
         DataContainer.JTS.put(wbMetadataSource.getId(),jt);
         return ResultVo.success();

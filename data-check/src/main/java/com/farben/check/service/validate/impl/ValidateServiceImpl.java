@@ -7,6 +7,7 @@ import com.farben.check.entity.WbMetadataSource;
 import com.farben.check.entity.WbRule;
 import com.farben.check.entity.response.CheckResultVo;
 import com.farben.check.entity.response.ValiTableVo;
+import com.farben.check.service.BaseService;
 import com.farben.check.service.IWbFieldRuleService;
 import com.farben.check.service.IWbMetadataSourceService;
 import com.farben.check.service.IWbRuleService;
@@ -15,8 +16,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
-import java.util.LinkedList;
-import java.util.List;
+import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.ResultSet;
+import java.util.*;
 
 /**
  * @Classname
@@ -36,6 +40,9 @@ public class ValidateServiceImpl implements IValidateService {
 
     @Autowired
     private IWbMetadataSourceService iWbMetadataSourceService;
+
+    @Autowired
+    private BaseService baseService;
 
     @Override
     public LinkedList<CheckResultVo> validateField(WbFieldRule wbFieldRule) {
@@ -98,5 +105,51 @@ public class ValidateServiceImpl implements IValidateService {
             res.add(build);
         }
         return res;
+    }
+
+
+    @Override
+    public void doVali(Integer dbId, String tableName) throws Exception {
+
+        JdbcTemplate jdbcTemplate = baseService.get(dbId);
+        DataSource dataSource = jdbcTemplate.getDataSource();
+        Connection connection = dataSource.getConnection();
+        DatabaseMetaData metaData = connection.getMetaData();
+        String dbName = baseService.getDbName(dbId);
+        ResultSet columns = metaData.getColumns(null, dbName, tableName, null);
+
+        // 存放类型，该类型对应的所有字段
+        HashMap<String, List<String>> sl = new HashMap<>();
+
+        while (columns.next()) {
+            // 长度
+            int columnSize = columns.getInt("COLUMN_SIZE");
+            //字段名
+            String fileName = columns.getString(4);
+            // 类型
+            String fileTypeName = columns.getString(6);
+            //是否有这个类型
+            List<String> orDefault = sl.getOrDefault(fileTypeName, null);
+
+            if (orDefault == null) {
+                sl.put(fileTypeName, Arrays.asList(fileName+"."+columnSize));
+            }else {
+                orDefault.add(fileName);
+                sl.put(fileTypeName,orDefault);
+            }
+
+        }
+
+        //跑所有字段都会进行的校验(null值校验)
+
+        // 遍历sl，不同的类型做不同的校验，对长度小于5的做枚举值校验
+
+        List<String> vas = Arrays.asList("STRING", "VARCHAR");
+
+        List<String> ins = Arrays.asList("INT", "DECIMAL", "BIGINT", "DOUBLE");
+
+
+        connection.close();
+
     }
 }

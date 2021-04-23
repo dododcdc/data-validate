@@ -20,7 +20,7 @@ public interface IValidateService {
      * @param wbFieldRule
      * @return
      */
-    public LinkedList<CheckResultVo> validateField(WbFieldRule wbFieldRule) ;
+     LinkedList<CheckResultVo> validateField(WbFieldRule wbFieldRule) ;
 
 
     /**
@@ -29,8 +29,15 @@ public interface IValidateService {
      * @param tableName
      * @return
      */
-    public List<ValiTableVo> valiTable(Integer dbId,String tableName) ;
+     List<ValiTableVo> valiTable(Integer dbId,String tableName) ;
 
+
+    /**
+     * 执行所有基础性校验
+     * @param dbId
+     * @param tableName
+     */
+    void doVali(Integer dbId, String tableName) throws Exception ;
 
 
 }

@@ -46,4 +46,17 @@ public class BaseService {
 
         return jdbcTemplate;
     }
+
+    /**
+     * 根据dbID 获取数据库名称
+     * @param dbId
+     * @return
+     * @throws Exception
+     */
+    public String getDbName(Integer dbId) throws Exception {
+        WbMetadataSource db = iWbMetadataSourceService.getById(dbId);
+        String url = db.getUrl();
+        String[] split = url.split("/");
+        return split[split.length-1];
+    }
 }

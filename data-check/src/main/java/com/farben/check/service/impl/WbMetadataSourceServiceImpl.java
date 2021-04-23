@@ -17,7 +17,4 @@ public class WbMetadataSourceServiceImpl
         extends ServiceImpl<WbMetadataSourceMapper, WbMetadataSource>
         implements IWbMetadataSourceService {
 
-    public void gg() {
-
-    }
 }

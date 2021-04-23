@@ -1,4 +1,4 @@
-package com.farben.check.service.table.impl;
+package com.farben.check.service.table;
 
 import com.farben.check.entity.response.PageList;
 

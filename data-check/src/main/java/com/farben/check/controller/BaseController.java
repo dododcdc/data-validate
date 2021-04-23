@@ -2,6 +2,8 @@ package com.farben.check.controller;
 
 import com.alibaba.druid.pool.DruidDataSourceFactory;
 import com.farben.check.entity.WbMetadataSource;
+import com.farben.check.service.BaseService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.util.HashMap;
@@ -13,6 +15,8 @@ import java.util.HashMap;
  * @Author benson
  **/
 public class BaseController {
+
+
 
 
     /**
@@ -27,7 +31,7 @@ public class BaseController {
         map.put("username",db.getUsername());
         map.put("password",db.getPassword());
         map.put("driverClassName",db.getDriver());
-        map.put("initialSize","10");
+        map.put("initialSize","5");
         JdbcTemplate jt = new JdbcTemplate(DruidDataSourceFactory.createDataSource(map));
         return jt;
     }

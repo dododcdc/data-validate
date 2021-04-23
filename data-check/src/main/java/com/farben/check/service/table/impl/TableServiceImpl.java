@@ -1,10 +1,10 @@
-package com.farben.check.service.table;
+package com.farben.check.service.table.impl;
 
 import com.farben.check.entity.WbMetadataSource;
 import com.farben.check.entity.response.PageList;
 import com.farben.check.service.BaseService;
 import com.farben.check.service.IWbMetadataSourceService;
-import com.farben.check.service.table.impl.ITableService;
+import com.farben.check.service.table.ITableService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -14,7 +14,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @Classname
@@ -29,29 +28,26 @@ public class TableServiceImpl extends BaseService implements ITableService {
 
     @Override
     public List<PageList> list(Integer dbId) throws Exception {
-//        //先从容器获取
-//        JdbcTemplate jdbcTemplate = DataContainer.JTS.getOrDefault(dbId, null);
-//        //如果没有去数据库查询
-//        if (jdbcTemplate == null) {
-//            WbMetadataSource db = iWbMetadataSourceService.getById(dbId);
-//            jdbcTemplate = getJdbcTemplate(db);
-//            //并将新的添加到容器
-//            DataContainer.JTS.put(dbId, jdbcTemplate);
-//        }
 
         JdbcTemplate jdbcTemplate = get(dbId);
 
         String sql = "show tables";
 
         // 查询该库下所有表
-        List<PageList> res = jdbcTemplate.query(sql, new RowMapper<PageList>() {
-            @Override
-            public PageList mapRow(ResultSet rs, int i) throws SQLException {
-                String str = rs.getString(1);
-                return PageList.builder().tableName(str).build();
-            }
-        });
-        return res;
+        List<String> str = jdbcTemplate.queryForList(sql,String.class);
+        List<PageList> pls = new ArrayList<>();
+        for (String s : str) {
+            pls.add(PageList.builder().tableName(s).build());
+        }
+        return pls;
+//        List<PageList> res = jdbcTemplate.query(sql, new RowMapper<PageList>() {
+//            @Override
+//            public PageList mapRow(ResultSet rs, int i) throws SQLException {
+//                String str = rs.getString(1);
+//                return PageList.builder().tableName(str).build();
+//            }
+//        });
+//        return res;
     }
 
     @Override

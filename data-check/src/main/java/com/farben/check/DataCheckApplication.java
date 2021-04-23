@@ -18,8 +18,6 @@ import java.util.List;
 @SpringBootApplication
 public class DataCheckApplication implements CommandLineRunner {
 
-    @Autowired
-    private IValidateService iValidateService;
 
     @Autowired
     private IWbMetadataSourceService iWbMetadataSourceService;
@@ -30,16 +28,15 @@ public class DataCheckApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-
         List<WbMetadataSource> list = iWbMetadataSourceService.list();
         BaseController baseController = new BaseController();
 
-        log.info("容器启动时有哪些数据源");
+        log.info("容器启动时将所有数据源放入内存");
         for (WbMetadataSource wbMetadataSource : list) {
             JdbcTemplate jdbcTemplate = baseController.getJdbcTemplate(wbMetadataSource);
             DataContainer.JTS.put(wbMetadataSource.getId(),jdbcTemplate);
         }
-//        List<ValiTableVo> car_price = iValidateService.valiTable(2, "addresses");
-//        System.out.println("===========");
+
+        log.info("数据源容器初始化完毕 ,总共加载了{}{}" ,list.size() ,"个数据源");
     }
 }

@@ -32,4 +32,5 @@ public interface IValidateService {
     public List<ValiTableVo> valiTable(Integer dbId,String tableName) ;
 
 
+
 }

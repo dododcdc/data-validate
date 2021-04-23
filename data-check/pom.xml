@@ -14,16 +14,7 @@
     <name>data-check</name>
     <description>Check that the data is correct</description>
     <repositories>
-<!--        <repository>-->
-<!--            <id>cloudera</id>-->
-<!--            <url>https://repository.cloudera.com/artifactory/cloudera-repos/Impala/</url>-->
-<!--            <releases>-->
-<!--                <enabled>true</enabled>-->
-<!--            </releases>-->
-<!--            <snapshots>-->
-<!--                <enabled>false</enabled>-->
-<!--            </snapshots>-->
-<!--        </repository>-->
+
 
         <repository>
             <id>cloudera</id>
@@ -149,7 +140,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.16</version>
+            <version>5.1.47</version>
         </dependency>
         <dependency>
             <groupId>com.baomidou</groupId>
@@ -163,13 +154,6 @@
             <version>1.1.23</version>
         </dependency>
 
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/com.cloudera/ImpalaJDBC41 &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>com.cloudera</groupId>-->
-<!--            <groupId>Impala</groupId>-->
-<!--            <artifactId>ImpalaJDBC42</artifactId>-->
-<!--            <version>2.6.15</version>-->
-<!--        </dependency>-->
 
         <!--日志-->
         <dependency>

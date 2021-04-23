@@ -21,6 +21,4 @@ public class CheckResultVo  {
     private String description;
     private String isPass;
 
-
-
 }

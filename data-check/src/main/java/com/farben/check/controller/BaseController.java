@@ -27,7 +27,7 @@ public class BaseController {
         map.put("username",db.getUsername());
         map.put("password",db.getPassword());
         map.put("driverClassName",db.getDriver());
-        map.put("initialSize","2");
+        map.put("initialSize","10");
         JdbcTemplate jt = new JdbcTemplate(DruidDataSourceFactory.createDataSource(map));
         return jt;
     }

@@ -83,6 +83,7 @@ public class ValidateServiceImpl implements IValidateService {
         qw.eq("db_id",dbId).eq("table_name",tableName);
         List<WbFieldRule> list = iWbFieldRuleService.list(qw);
         List<ValiTableVo> res = new LinkedList<>();
+
         WbMetadataSource ms = iWbMetadataSourceService.getById(dbId);
         String[] split = ms.getUrl().split("/");
         String dbName = split[split.length - 1];

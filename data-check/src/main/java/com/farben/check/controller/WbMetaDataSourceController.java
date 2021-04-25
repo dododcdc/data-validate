@@ -45,13 +45,11 @@ public class WbMetaDataSourceController extends BaseController {
             //将资源存到数据库
             boolean res = iWbMetadataSourceService.save(wbMetadataSource);
             JdbcTemplate jt = baseService.get(wbMetadataSource.getId());
-//        JdbcTemplate jt = getJdbcTemplate(wbMetadataSource);
             // 将jdbctemplate添加到内存中
             DataContainer.JTS.put(wbMetadataSource.getId(), jt);
             return ResultVo.success();
         } catch (Exception e) {
-            log.error("添加连接");
-            log.error(e.getMessage());
+            log.error("添加连接 {}",e.getMessage());
             return ResultVo.fail();
         }
     }

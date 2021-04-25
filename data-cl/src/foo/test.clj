@@ -21,6 +21,7 @@
 (defn hello [] 
   (def a 4))
 (println a)
+(defonce ^:atom a "5")
 
 (defn -main
   "distrubit"

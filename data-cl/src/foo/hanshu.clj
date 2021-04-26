@@ -8,6 +8,10 @@
 ;;定义一个函数,返回值为hello
 (defn hello [] 
   (str "hello"))
+
+;;定义一个函数返回值为hello
+(defn get-hello [] (str "how are you") "hello")
+
 ;;调用 
 (foo "尹志平")
 

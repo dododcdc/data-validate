@@ -25,6 +25,10 @@
 ;; 随机生成一个无限数字集合 取前三个 (生成元素的函数自由定义)
 (take 3 (repeatedly (fn [] (rand-int 10))))
 
+;; 取一个列表中的最大值，需要通过apply来配合 max只能 (max 0 1 2)
+(max [0 1 2])
+; => [0 1 2]
+(apply max [0 1 2])
+; => 2
 (defn -main [& args]
-(doseq [i res] (println i))
-  )
+(doseq [i res] (println i)))

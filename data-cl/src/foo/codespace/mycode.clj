@@ -30,5 +30,16 @@
 ; => [0 1 2]
 (apply max [0 1 2])
 ; => 2
+;; 读取文件
+(def filename "a.txt")
+(slurp filename)
+
+;; 递归
+(defn sum
+     ([vals] (sum vals 0))
+  ([vals accumulating-total]
+         (if (empty? vals)
+            accumulating-total
+            (sum (rest vals) (+ (first vals) accumulating-total)))))
 (defn -main [& args]
 (doseq [i res] (println i)))

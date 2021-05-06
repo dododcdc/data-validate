@@ -41,5 +41,15 @@
          (if (empty? vals)
             accumulating-total
             (sum (rest vals) (+ (first vals) accumulating-total)))))
+
+;;comp
+(def character
+  {:name "Smooches McCutes"
+   :attributes {:intelligence 10
+                :strength 4
+                :dexterity 5}})
+(def c-int (comp :intelligence :attributes))
+(def c-str (comp :strength :attributes))
+(def c-dex (comp :dexterity :attributes))
 (defn -main [& args]
 (doseq [i res] (println i)))

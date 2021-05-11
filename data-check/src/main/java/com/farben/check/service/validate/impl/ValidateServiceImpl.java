@@ -140,14 +140,17 @@ public class ValidateServiceImpl implements IValidateService {
 
         }
 
-        //跑所有字段都会进行的校验(null值校验)
+        // 跑所有字段都会进行的校验(null值校验)
 
         // 遍历sl，不同的类型做不同的校验，对长度小于5的做枚举值校验
 
         List<String> vas = Arrays.asList("STRING", "VARCHAR");
+        // 跑针对字符串的校验
 
         List<String> ins = Arrays.asList("INT", "DECIMAL", "BIGINT", "DOUBLE");
+        // 跑针对数值型的校验
 
+        // 对以上每一个校验规则跑出的结果 都生成一条记录(通过或者不通过,将校验sql、校验规则封装返回)
 
         connection.close();
 

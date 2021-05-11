@@ -1,4 +1,4 @@
-## data-validata
+## data-validate
 > dododcdc
 
 ### 介绍

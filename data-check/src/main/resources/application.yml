@@ -26,6 +26,12 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/ncbc
+    url: jdbc:mysql://localhost:3306/nbcb?useSSL=false&serverTimezone=UTC
     username: root
-    password: 1111
+    password: 123
+#是否启动,默认不启动
+#clojure:
+#  nrepl:
+#    state: true
+#    port: 7888
+#    mode: dev

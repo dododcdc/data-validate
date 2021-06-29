@@ -4,6 +4,7 @@ import com.farben.check.container.DataContainer;
 import com.farben.check.controller.BaseController;
 import com.farben.check.entity.WbMetadataSource;
 import com.farben.check.service.IWbMetadataSourceService;
+import com.wb.greeting.GreetingApplicationRunner;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -21,6 +22,9 @@ public class DataCheckApplication implements CommandLineRunner {
     @Autowired
     private IWbMetadataSourceService iWbMetadataSourceService;
 
+    @Autowired
+    private GreetingApplicationRunner greetingApplicationRunner;
+
     public static void main(String[] args) {
         SpringApplication.run(DataCheckApplication.class, args);
     }
@@ -37,5 +41,7 @@ public class DataCheckApplication implements CommandLineRunner {
         }
 
         log.info("数据源容器初始化完毕 ,总共加载了{}{}" ,list.size() ,"个数据源");
+
+        greetingApplicationRunner.say("do it ");
     }
 }

@@ -24,6 +24,10 @@
 (println (drop 2 nums))
 ;;调用java类
 (def rnd (new java.util.Random))
+(def j (new java.util.ArrayList))
+(. j add 10)
+(. j add 20)
+(doseq [i j] (println i))
 (println (. rnd nextInt 10))
 
 (defn -main [& args] (println "i am main"))

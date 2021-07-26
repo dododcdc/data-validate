@@ -35,7 +35,16 @@ public class PrtsStream {
 
     }
 
+    public static void filter() {
+        List<CellPhone> list = PrtsStream.list;
+
+        list.stream().filter(x -> {
+           return x.getPrice() > 5000;
+        }).collect(Collectors.toList()).forEach(x -> System.out.println(x));
+    }
+
     public static void main(String[] args) {
-        PrtsStream.map();
+//        PrtsStream.map();
+        PrtsStream.filter();
     }
 }

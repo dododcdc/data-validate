@@ -95,6 +95,5 @@ public class TraderStream {
         Map<Integer, Map<String, List<Transaction>>> gbYearAndCity = transactions.stream()
                 .collect(Collectors.groupingBy(Transaction::getYear, Collectors.groupingBy(x -> x.getTrader().getCity())));
 
-
     }
 }

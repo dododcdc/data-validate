@@ -6,6 +6,8 @@ import com.farben.check.entity.streamprts.Transaction;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class TraderStream {
@@ -52,11 +54,43 @@ public class TraderStream {
                 .sorted(Comparator.comparing(Trader::getName));
 
 //        (4) 返回所有交易员的姓名字符串，按字母顺序排序。
+        transactions.stream()
+                .map(x -> x.getTrader().getName())
+                .sorted();
 
 //        (5) 有没有交易员是在米兰工作的？
+        boolean milan = transactions.stream()
+                .anyMatch(x -> x.getTrader().getCity().equals("Milan"));
+
 //        (6) 打印生活在剑桥的交易员的所有交易额。
+        transactions.stream()
+                .filter(x -> x.getTrader().getCity().equals("Cambridge"))
+                .map(Transaction::getValue)
+//                .reduce(0,(a,b) -> a + b)
+                .reduce(Integer::sum);
+
+        // 上面用reduce求值有拆箱装箱的操作，可以改写为
+        transactions.stream()
+                .filter(x -> x.getTrader().getCity().equals("Cambridge"))
+                .mapToInt(Transaction::getValue)
+                .sum();
+
+
+
 //        (7) 所有交易中，最高的交易额是多少？
+        transactions.stream()
+                .max(Comparator.comparing(Transaction::getValue));
 //        (8) 找到交易额最小的交易。
+        Optional<Integer> vMin = transactions.stream()
+                .map(Transaction::getValue)
+                .reduce((a, b) -> a > b ? b : a);
+        System.out.println("over");
+
+        // 谓词复合
+        Predicate<Transaction> s = x -> x.getValue()> 300; // 定义一个断言
+        Predicate<Transaction> and = s.and(x -> x.getYear() > 2011); // 在上面断言的基础上继续加条件即谓词复合,还可以加 or 、negate
+
+
 
     }
 }

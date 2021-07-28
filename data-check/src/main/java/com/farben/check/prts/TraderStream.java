@@ -3,10 +3,8 @@ package com.farben.check.prts;
 import com.farben.check.entity.streamprts.Trader;
 import com.farben.check.entity.streamprts.Transaction;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.function.BiFunction;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -72,7 +70,7 @@ public class TraderStream {
         // 上面用reduce求值有拆箱装箱的操作，可以改写为
         transactions.stream()
                 .filter(x -> x.getTrader().getCity().equals("Cambridge"))
-                .mapToInt(Transaction::getValue)
+                .mapToInt(Transaction::getValue) // 返回一个IntStream ,使用 boxed() 可以将数值流转换回去，如果不转换 IntStream的map就只能返回int
                 .sum();
 
 
@@ -90,6 +88,12 @@ public class TraderStream {
         Predicate<Transaction> s = x -> x.getValue()> 300; // 定义一个断言
         Predicate<Transaction> and = s.and(x -> x.getYear() > 2011); // 在上面断言的基础上继续加条件即谓词复合,还可以加 or 、negate
 
+        // 根据年份分组
+        Map<Integer, List<Transaction>> gbYear = transactions.stream()
+                .collect(Collectors.groupingBy(Transaction::getYear));
+        // 多级分组
+        Map<Integer, Map<String, List<Transaction>>> gbYearAndCity = transactions.stream()
+                .collect(Collectors.groupingBy(Transaction::getYear, Collectors.groupingBy(x -> x.getTrader().getCity())));
 
 
     }

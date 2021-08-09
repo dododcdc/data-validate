@@ -2,6 +2,8 @@ package com.farben.check.prts;
 
 import com.farben.check.entity.CellPhone;
 
+import javax.swing.text.html.Option;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -111,6 +113,10 @@ public class PrtsStream {
         Stream.of(1,2,3)
                 .reduce((Integer::max));
 
+    }
+
+    public void merg(Integer a,Integer b,Integer c) {
+        System.out.println(Stream.of(a, b, c).reduce(Integer::sum).orElseGet(() -> -1));
     }
 
     public static void main(String[] args) {

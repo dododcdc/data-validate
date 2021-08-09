@@ -1,5 +1,6 @@
 package com.farben.check.prts;
 
+import java.lang.reflect.Method;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.ForkJoinTask;
 import java.util.concurrent.RecursiveTask;
@@ -30,6 +31,7 @@ public class ForkJoinSumCalculator extends RecursiveTask<Long> {
 
         ForkJoinSumCalculator leftfork = new ForkJoinSumCalculator(numbers, start, start + length / 2);
         leftfork.fork();
+
         ForkJoinSumCalculator rightfork = new ForkJoinSumCalculator(numbers, start + length / 2, end);
         Long rightRes = rightfork.compute();
         Long leftRes = leftfork.join();
@@ -50,10 +52,22 @@ public class ForkJoinSumCalculator extends RecursiveTask<Long> {
         return new ForkJoinPool().invoke(task);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
-        long l = ForkJoinSumCalculator.forkJoinSum(100000l);
-        System.out.println(l);
+//        long l = ForkJoinSumCalculator.forkJoinSum(100000l);
+//        System.out.println(l);
+
+        Class<?> pts = Class.forName("com.farben.check.prts.PrtsStream");
+        Method map = pts.getMethod("map");
+
+        Object o = pts.newInstance();
+        map.invoke(o);
+        Method merg = pts.getMethod("merg", Integer.class, Integer.class, Integer.class);
+        Integer[] arr = {1,2,3};
+        merg.invoke(o,arr);
+
     }
+
+
 
 }

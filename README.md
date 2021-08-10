@@ -16,9 +16,7 @@ springboot mysql mybatis-plus vue element-ui CDH集群
 2. 在mysql执行初始化data-validate\data-check\src\main\resources\init-sql\init.sql
    
    * 修改init.sql中数据库的配置信息，改为你要校验的数据库地址
-   
-     ![](C:\Users\wenbi\Desktop\屏幕截图 2021-08-10 173949.png)
-   
+      ![image](https://cdn.jsdelivr.net/gh/dododcdc/rep-myimage@main/images/屏幕截图 2021-08-10 173949.5ri33oqnc7w0.png)
    * 执行init.sql
    
 3. 启动后端服务

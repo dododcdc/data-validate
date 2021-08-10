@@ -115,8 +115,9 @@ public class PrtsStream {
 
     }
 
-    public void merg(Integer a,Integer b,Integer c) {
-        System.out.println(Stream.of(a, b, c).reduce(Integer::sum).orElseGet(() -> -1));
+    public void merg(Integer a,String b,Integer c) {
+        int s = Integer.parseInt(b);
+        System.out.println(Stream.of(a, s, c).reduce(Integer::sum).orElseGet(() -> -1));
     }
 
     public static void main(String[] args) {

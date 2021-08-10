@@ -62,10 +62,28 @@ public class ForkJoinSumCalculator extends RecursiveTask<Long> {
 
         Object o = pts.newInstance();
         map.invoke(o);
-        Method merg = pts.getMethod("merg", Integer.class, Integer.class, Integer.class);
-        Integer[] arr = {1,2,3};
-        merg.invoke(o,arr);
+//        Method merg = pts.getMethod("merg", Integer.class, Integer.class, Integer.class);
+//        Integer[] arr = {1,2,3};
+//        merg.invoke(o,arr);
+        Object[] nums = {1,"2",3};
+        Class<?>[] cls = {Integer.class,String.class,Integer.class};
+        doit("com.farben.check.prts.PrtsStream","merg",nums,cls);
 
+    }
+
+    /**
+     * 利用反射调用类方法(通用)
+     * @param cls 类路径
+     * @param mth 方法名
+     * @param objects 参数
+     * @param clt 参数类型的class
+     * @throws Exception
+     */
+    public static void doit(String cls,String mth,Object[] objects,Class<?>... clt) throws Exception {
+        Class<?> aClass = Class.forName(cls);
+        Object o = aClass.newInstance();
+        Method method = aClass.getMethod(mth, clt);
+        method.invoke(o,objects);
     }
 
 

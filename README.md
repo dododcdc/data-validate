@@ -9,11 +9,18 @@ springboot mysql mybatis-plus vue element-ui CDH集群
 
 ### 部署教程
 > 请确保java和nodejs已经安装好并且都已经配置了环境变量
- 
+
 1. 将配置文件(resources/application.yml)中数据库的地址改为你自己的地址
 ![image](https://user-images.githubusercontent.com/57853678/114810777-60aab480-9ddf-11eb-86f8-76de1cc9eec0.png)
 
 2. 在mysql执行初始化data-validate\data-check\src\main\resources\init-sql\init.sql
+   
+   * 修改init.sql中数据库的配置信息，改为你要校验的数据库地址
+   
+     ![](C:\Users\wenbi\Desktop\屏幕截图 2021-08-10 173949.png)
+   
+   * 执行init.sql
+   
 3. 启动后端服务
       * 将data-check 打成jar包
       * 执行java -jar `jar包路径`

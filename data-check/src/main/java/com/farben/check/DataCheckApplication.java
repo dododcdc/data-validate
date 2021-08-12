@@ -1,15 +1,21 @@
 package com.farben.check;
 
+import com.farben.check.config.B;
 import com.farben.check.container.DataContainer;
 import com.farben.check.controller.BaseController;
+import com.farben.check.entity.Dish;
 import com.farben.check.entity.WbMetadataSource;
 import com.farben.check.service.IWbMetadataSourceService;
+import com.farben.check.service.validate.IValidateService;
+import com.farben.check.service.validate.impl.ValidateServiceImpl;
 import com.wb.greeting.GreetingApplicationRunner;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.catalina.core.ApplicationContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.util.List;
@@ -24,9 +30,13 @@ public class DataCheckApplication implements CommandLineRunner {
 
     @Autowired
     private GreetingApplicationRunner greetingApplicationRunner;
-
+    @Autowired
+    private A a;
     public static void main(String[] args) {
         SpringApplication.run(DataCheckApplication.class, args);
+
+
+
     }
 
     @Override
@@ -43,5 +53,12 @@ public class DataCheckApplication implements CommandLineRunner {
         log.info("数据源容器初始化完毕 ,总共加载了{}{}" ,list.size() ,"个数据源");
 
         greetingApplicationRunner.say("do it ");
+        a.say();
+        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext();
+        ac.register(B.class);
+        ac.refresh();
+        Object bs = ac.getBean("dish");
+
+        System.out.println("--");
     }
 }

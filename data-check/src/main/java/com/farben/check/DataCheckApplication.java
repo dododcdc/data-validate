@@ -3,14 +3,10 @@ package com.farben.check;
 import com.farben.check.config.B;
 import com.farben.check.container.DataContainer;
 import com.farben.check.controller.BaseController;
-import com.farben.check.entity.Dish;
 import com.farben.check.entity.WbMetadataSource;
 import com.farben.check.service.IWbMetadataSourceService;
-import com.farben.check.service.validate.IValidateService;
-import com.farben.check.service.validate.impl.ValidateServiceImpl;
 import com.wb.greeting.GreetingApplicationRunner;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.catalina.core.ApplicationContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -59,6 +55,5 @@ public class DataCheckApplication implements CommandLineRunner {
         ac.refresh();
         Object bs = ac.getBean("dish");
 
-        System.out.println("--");
     }
 }

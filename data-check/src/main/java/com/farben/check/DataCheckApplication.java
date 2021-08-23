@@ -30,9 +30,6 @@ public class DataCheckApplication implements CommandLineRunner {
     private A a;
     public static void main(String[] args) {
         SpringApplication.run(DataCheckApplication.class, args);
-
-
-
     }
 
     @Override

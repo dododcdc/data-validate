@@ -1,6 +1,9 @@
 package com.farben.check.prts.sjjg;
 
 
+import java.util.HashMap;
+import java.util.LinkedList;
+
 public class WbList {
     Node head;
     int length;
@@ -81,11 +84,12 @@ public class WbList {
         // 将node的上一个的next指向node的下一个
         pre.next = next;
         this.length--;
-
-
     }
 
     public static void main(String[] args) {
+
+        LinkedList<Object> objects = new LinkedList<>();
+        new HashMap<>();
 
         WbList wbList = new WbList();
         Node cc = new Node("cc", null);
@@ -99,6 +103,5 @@ public class WbList {
         System.out.println("over");
 
     }
-
 
 }

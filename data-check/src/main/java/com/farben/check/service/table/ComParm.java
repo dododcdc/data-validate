@@ -57,14 +57,18 @@ public class ComParm {
      * @return
      */
     public ResSql compConcat(ComParm comParm) {
-        // todo 拼接对比sql
         ResSql resSql = new ResSql();
         StringBuilder str = new StringBuilder("SELECT COUNT(*)");
         String tmp = "";
         for (int i = 0; i < comParm.fields.size(); i++) {
             tmp += ",SUM(CASE WHEN X." + this.fields.get(i) + " <> Y." + comParm.fields.get(i) +
-                    " THEN 1 ELSE 0 END) AS " + this.fields.get(i) + " FROM ";
+                    " THEN 1 ELSE 0 END) AS " + this.fields.get(i) ;
         }
+        String s = str.toString()  + tmp + " FROM " + comParm.dbName + "." + comParm.tableName
+                + "X JOIN  " + this.dbName + "." + this.tableName
+                + " Y ON " ;
+        // todo 拼接关联条件
+
         return resSql;
     }
 

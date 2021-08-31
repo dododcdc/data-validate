@@ -17,4 +17,6 @@ public class WbRuleServiceImpl extends ServiceImpl<WbRuleMapper, WbRule> impleme
 {
 
 
+
+
 }

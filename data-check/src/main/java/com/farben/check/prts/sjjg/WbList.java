@@ -48,7 +48,7 @@ public class WbList {
      */
     public Node get(int index) {
         if (index>length) return null;
-        Node temp = head;
+        Node temp = head ;
         for (int i = 0; i < index; i++) {
             temp = temp.next;
         }

@@ -31,8 +31,8 @@ public class TwoSum {
         int[] arr = {2,7,11,3,15,6};
         int target = 9;
 
+        // 两个数相加等于9的都找出来
         ArrayList<Integer[]> index = getIndex(target, arr);
-        System.out.println("over");
 
     }
 }

@@ -5,7 +5,6 @@ import com.farben.check.container.DataContainer;
 import com.farben.check.controller.BaseController;
 import com.farben.check.entity.WbMetadataSource;
 import com.farben.check.service.IWbMetadataSourceService;
-import com.wb.greeting.GreetingApplicationRunner;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -24,10 +23,10 @@ public class DataCheckApplication implements CommandLineRunner {
     @Autowired
     private IWbMetadataSourceService iWbMetadataSourceService;
 
-    @Autowired
-    private GreetingApplicationRunner greetingApplicationRunner;
+
     @Autowired
     private A a;
+
     public static void main(String[] args) {
         SpringApplication.run(DataCheckApplication.class, args);
     }
@@ -40,12 +39,11 @@ public class DataCheckApplication implements CommandLineRunner {
         log.info("容器启动时将所有数据源放入内存");
         for (WbMetadataSource wbMetadataSource : list) {
             JdbcTemplate jdbcTemplate = baseController.getJdbcTemplate(wbMetadataSource);
-            DataContainer.JTS.put(wbMetadataSource.getId(),jdbcTemplate);
+            DataContainer.JTS.put(wbMetadataSource.getId(), jdbcTemplate);
         }
 
-        log.info("数据源容器初始化完毕 ,总共加载了{}{}" ,list.size() ,"个数据源");
+        log.info("数据源容器初始化完毕 ,总共加载了{}{}", list.size(), "个数据源");
 
-        greetingApplicationRunner.say("do it ");
         a.say();
         AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext();
         ac.register(B.class);

@@ -51,6 +51,5 @@ public class DataCheckApplication implements CommandLineRunner {
         ac.register(B.class);
         ac.refresh();
         Object bs = ac.getBean("dish");
-
     }
 }

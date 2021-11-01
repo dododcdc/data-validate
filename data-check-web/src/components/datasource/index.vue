@@ -13,7 +13,7 @@
             </el-row>
             <el-row>
                 <el-col :span="10">
-                    <el-form-item label="用户名">
+                    <el-form-item label="用户名1">
                         <el-input v-model="datasource.username" placeholder="root"></el-input>
                     </el-form-item>
                 </el-col>

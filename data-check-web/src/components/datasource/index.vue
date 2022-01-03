@@ -6,7 +6,7 @@
         <el-form :model="datasource" class="formsource" label-width="120px">
             <el-row>
                 <el-col :span="10">
-                    <el-form-item label="地址">
+                    <el-form-item label="地址1">
                         <el-input v-model="datasource.url" placeholder="jdbc:hive2://hiveaddress:10000/db1"></el-input>
                     </el-form-item>
                 </el-col>

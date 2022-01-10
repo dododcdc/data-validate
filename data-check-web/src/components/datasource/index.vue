@@ -66,7 +66,7 @@
         </el-form>
         </div>
 
-      <!-- This example requires Tailwind CSS v2.0+ -->
+    
       <div>
         <nav class="bg-gray-800">
           <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -100,7 +100,7 @@
                     </svg>
                   </button>
 
-                  <!-- Profile dropdown -->
+        
                   <div class="ml-3 relative">
                     <div>
                       <button type="button" class="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">

@@ -18,7 +18,7 @@
 
           </el-submenu>
         </template>
-        　　　 <!-- 选项选项 -->
+        　　　 <!-- 选项 -->
         <template v-else>
           <el-menu-item :key="index" :index="item.index">
             <i :class="item.icon"></i>

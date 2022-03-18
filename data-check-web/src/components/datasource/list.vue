@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>数据源展示</h1>
+        <h1>数据源展示展示</h1>
       <template v-for="(item,index) in list">
         　　　 <!-- 标题-->
         <template v-if="item.children.length">

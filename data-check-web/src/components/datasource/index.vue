@@ -116,7 +116,8 @@
                        
                         "  1"
                       Leaving: 
-                        From: "transfom opacity-100 scale-100"
+                        From: "transfo
+                        m opacity-100 scale-100"
                         To: " -0 scale-95"
                     -->
                     <div class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">

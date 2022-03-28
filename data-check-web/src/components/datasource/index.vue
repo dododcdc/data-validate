@@ -115,7 +115,7 @@
                       
                        
                         "  1"
-                      Leaving: 
+                     
                         From: "transfo
                         m opacity-100 scale-100"
                         To: " -0 scale-95"

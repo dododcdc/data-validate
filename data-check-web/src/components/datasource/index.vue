@@ -20,7 +20,7 @@
             </el-row>
             <el-row>
                 <el-col :span="10">
-                    <el-form-item label="密码">
+                    <el-form-item label="密码1">
                         <el-input v-model="datasource.password" placeholder="1111"></el-input>
                     </el-form-item>
                 </el-col>

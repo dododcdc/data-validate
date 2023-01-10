@@ -8,5 +8,6 @@ public class A {
     public void say() {
         System.out.println("today is good day");
         System.out.println("today is good day");
+        System.out.println("today is good day");
     }
 }

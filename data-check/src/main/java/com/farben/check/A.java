@@ -14,5 +14,6 @@ public class A {
         System.out.println("today is good day");
         System.out.println("today is good day");
         System.out.println("today is good day");
+        System.out.println("today is good day");
     }
 }

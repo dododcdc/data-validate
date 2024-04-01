@@ -13,7 +13,7 @@
       <el-col :span="2" >
         <el-button @click="toDatabaseList" type="text" style="color: white">查看数据源</el-button>
       </el-col>
-      <el-col :span="2">
+      <el-col :span="2" >
         <el-button @click="toValidata" type="text" style="color: white">校验配置</el-button>
       </el-col>
     </el-row>

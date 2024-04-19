@@ -7,7 +7,7 @@
           <img src="./resource/img/logo.png">
         </div>
       </el-col>
-      <el-col :span="2">
+      <el-col :span="2" >
         <el-button @click="toDatasource" type="text" style="color: white">添加数据源</el-button>
       </el-col>
       <el-col :span="2">

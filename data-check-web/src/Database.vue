@@ -22,7 +22,7 @@
         </el-aside>
         <el-main>
 <!--          <router-view />-->
-          <tables ref="tables" ></tables>
+          <tables ref="tables" > </tables>
         </el-main>
       </el-container>
     </el-container>

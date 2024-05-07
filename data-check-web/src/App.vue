@@ -3,7 +3,7 @@
     <el-row style="background:#0061ae">
       <el-col :span="1"><h1></h1></el-col>
       <el-col :span="10">
-        <div >
+        <div>
           <img src="./resource/img/logo.png">
         </div>
       </el-col>

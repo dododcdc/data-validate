@@ -10,7 +10,7 @@
       <el-col :span="2">
         <el-button @click="toDatasource" type="text" style="color: white">添加数据源</el-button>
       </el-col>
-      <el-col :span="2">
+      <el-col :span="2" >
         <el-button @click="toDatabaseList" type="text" style="color: white">查看数据源</el-button>
       </el-col>
       <el-col :span="2">

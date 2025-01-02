@@ -19,6 +19,7 @@ export default new Router({
 
     },
     {
+
       path: '/',
       name: 'check',
       component: check

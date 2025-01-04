@@ -24,6 +24,7 @@ export default new Router({
       name: 'check',
 
       component: check
+
     },
     {
       path: '/datasource',

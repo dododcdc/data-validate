@@ -30,6 +30,7 @@ export default new Router({
       path: '/datasource',
       name: 'datasource',
       component: datasource
+
     },
     {
       path: '/list',

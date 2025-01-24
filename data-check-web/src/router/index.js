@@ -16,10 +16,8 @@ export default new Router({
       path: '/g',
       name: 'HelloWorld',
       component: HelloWorld
-
     },
     {
-
       path: '/',
       name: 'check',
       component: check

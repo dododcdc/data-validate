@@ -57,4 +57,5 @@ export default new Router({
       component: Rule
     }
   ]
+
 })

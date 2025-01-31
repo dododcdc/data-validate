@@ -39,6 +39,7 @@ export default new Router({
       // redirect: '/Welcome',
       children: [
         {
+
           path:'/Welcome',
           component: Welcome
         }

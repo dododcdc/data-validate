@@ -7,6 +7,7 @@ export const add = function (data) {
     axios.post(url,data).then(x=>{
 
       Message({
+
           "type":"info",
 
           "message":x.data.msg

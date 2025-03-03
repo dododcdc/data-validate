@@ -15,6 +15,7 @@ export const list = function () {
 // 统计表总数
 export const demo = async function (dbId,tableName) {
   var res = 0
+
   await axios.get("/db-table/count?dbId=" +dbId +"&tableName=" + tableName).then(x => {
     res = x.data.data
   })

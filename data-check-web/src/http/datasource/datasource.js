@@ -15,6 +15,7 @@ export const add = function (data) {
 
 export const get = function () {
     const url = '/wbMetaDataSource/get'
+
     axios.get(url).then(x => {
         alert(x.data.msg)
     })

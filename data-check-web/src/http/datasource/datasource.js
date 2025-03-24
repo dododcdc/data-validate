@@ -9,6 +9,7 @@ export const add = function (data) {
           "type":"info",
 
           "message":x.data.msg
+
         })
     })
 }

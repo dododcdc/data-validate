@@ -4,6 +4,7 @@ export const list = function () {
   const url = '/db-table/list'
   let list = []
   axios.get(url).then(x => {
+
     list = x.data.data
 
     return list

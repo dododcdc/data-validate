@@ -17,7 +17,6 @@
         <el-button @click="toValidata" type="text" style="color: white">校验配置</el-button>
       </el-col>
     </el-row>
-
     <router-view/>
   </div>
 </template>
